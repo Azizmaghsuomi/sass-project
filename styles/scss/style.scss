@@ -1,0 +1,295 @@
+@import "./variabels";
+@import "./base";
+@import "./mixins";
+
+.header {
+  position: absolute;
+  width: 100%;
+  padding: 0.2rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $primaryColor;
+
+  @include media(M) {
+    padding: 0.2rem 2rem;
+  }
+
+  //   BURGER BUTTON
+  .burger-btn {
+    padding: 0.2rem;
+    font-size: 1.3rem;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    color: $whiteColor;
+
+    @include media(L) {
+      display: none;
+    }
+
+    @include media(M) {
+      display: block;
+    }
+
+    &:focus+.header-nav {
+      display: block;
+    }
+  }
+
+  .header-nav {
+    @include media(M) {
+      display: none;
+    }
+  }
+
+  //   LIST
+  .header-list {
+    @include flexibal(center, center);
+
+    @include media(M) {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      flex-direction: column;
+    }
+
+    .header-link {
+      display: block;
+      margin: 0 0.7rem;
+      @include textStyle(1.1rem, normal, $whiteColor);
+
+      @include media(M) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  //   LOGO
+  .logo-warpper {
+    display: flex;
+    align-items: center;
+
+    .logo-title {
+      @include textStyle(1.5rem, bold, $whiteColor);
+    }
+
+    .logo-img {
+      width: 60px;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+//search section
+
+.search-container {
+  height: 100vh;
+  @include flexibal(center, center);
+  flex-direction: column;
+
+  .search-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+
+    @include textStyle(2rem, bold, $textColor);
+
+    @include media(M) {
+      text-align: center;
+      font-size: 1.7rem;
+      line-height: 4rem;
+    }
+  }
+}
+
+.search-warpper {
+  width: 50%;
+  @include flexibal(center, center);
+
+  @include media(M) {
+    width: 90%;
+    flex-wrap: wrap;
+  }
+
+  .search-input {
+    width: 100%;
+    margin: 0 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+    font-size: 1.1rem;
+
+    &::placeholder {
+      color: #999;
+    }
+  }
+
+  .search-btn {
+    background-color: $primaryColor;
+    @include textStyle(1rem, normal, $whiteColor);
+    padding: 0.3rem 1.2rem;
+    border-radius: 50px;
+    border: 1px solid $textColor;
+    box-shadow: 0px 1px 5px 0px black;
+
+    @include media(M) {
+      margin-top: 1.5rem;
+    }
+
+    &:hover {
+      background-color: $primaryColor-bold;
+      cursor: pointer;
+    }
+  }
+}
+
+// COURSE SECTION
+
+.corses-container {
+
+  @include flexibal(center, center);
+  flex-wrap: wrap;
+
+  .course-item {
+    width: 400px;
+    margin: 1rem;
+    background-color: $whiteColor;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 0.5rem;
+  transition: all 1s;
+    &:hover {
+      scale: 1.1;
+    }
+
+  }
+
+  .course-info {
+    margin-top: 0.5rem;
+    @include flexibal(center, space-between);
+
+    .course-title {
+      @include textStyle(1.2rem, bold, $textColor);
+    }
+
+    .course-price {
+      @include textStyle(1.2rem, bold, #04770c);
+    }
+  }
+}
+
+// CONTACT SECION
+
+.content-container {
+  @include flexibal(center, space-between);
+  margin: 0 4rem;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+
+  @include media(M) {
+    margin: 0 2rem;
+    margin-top: 4rem;
+  }
+
+  .logo-section {
+    @include flexibal(center, center);
+    flex-direction: column;
+    width: 50%;
+
+    &_img {
+      width: 200px;
+      margin-bottom: 0.5rem;
+
+      @include media(M) {
+        width: 140px;
+      }
+    }
+
+    .logo-title {
+      @include textStyle (1.5rem, normal, $textColor);
+      text-align: center;
+    }
+
+    @include media(M) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+  }
+
+  // CONTACT INFO
+
+  .info-section {
+
+    .info-item {
+      display: block;
+      margin-bottom: 1rem;
+      padding: 1.5rem 3rem;
+      border-radius: 5px;
+      background-color: $primaryColor;
+      text-align: center;
+      transition: all 0.5s;
+
+      @include media(M) {
+        padding: 2.2rem 3rem;
+      }
+
+      &:hover {
+        background-color: $primaryColor-bold;
+      }
+
+      &:hover i {
+        transform: rotate(25deg);
+      }
+
+      i {
+        display: block;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        transition: all 0.5s;
+      }
+
+      .info-text {
+        @include textStyle(1.1rem, bold, $textColor);
+      }
+
+    }
+
+    @include media(M) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+
+}
+
+// FOOTER
+
+.footer-container {
+  @include flexibal(center, space-between);
+  margin-top: 3rem;
+  background-color: $primaryColor;
+  padding: 2rem 4rem;
+  color: #fff;
+
+  //list
+  .list-section .list-link {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.5s;
+
+    &:hover {
+      margin-right: 0.9rem;
+    }
+  }
+
+  .text-section p {
+    margin-bottom: 0.6rem;
+  }
+}

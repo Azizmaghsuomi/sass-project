@@ -1,0 +1,328 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "vazir";
+}
+
+html {
+  direction: rtl;
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: vazir;
+  src: url(../../fonts/vazir-font-v27.2.2-Fontjo.com/Vazir-Medium.woff) format(woff);
+}
+body {
+  background-color: #f4ffff;
+  color: #262626;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+input,
+button,
+textarea {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  padding: 0.2rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #10c2c7;
+}
+@media (max-width: 768px) {
+  .header {
+    padding: 0.2rem 2rem;
+  }
+}
+.header .burger-btn {
+  padding: 0.2rem;
+  font-size: 1.3rem;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .header .burger-btn {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .header .burger-btn {
+    display: block;
+  }
+}
+.header .burger-btn:focus + .header-nav {
+  display: block;
+}
+@media (max-width: 768px) {
+  .header .header-nav {
+    display: none;
+  }
+}
+.header .header-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .header .header-list {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    flex-direction: column;
+  }
+}
+.header .header-list .header-link {
+  display: block;
+  margin: 0 0.7rem;
+  font-size: 1.1rem;
+  font-weight: normal;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .header .header-list .header-link {
+    margin-bottom: 1rem;
+  }
+}
+.header .logo-warpper {
+  display: flex;
+  align-items: center;
+}
+.header .logo-warpper .logo-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+.header .logo-warpper .logo-img {
+  width: 60px;
+  margin-right: 0.5rem;
+}
+
+.search-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.search-container .search-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #262626;
+}
+@media (max-width: 768px) {
+  .search-container .search-title {
+    text-align: center;
+    font-size: 1.7rem;
+    line-height: 4rem;
+  }
+}
+
+.search-warpper {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .search-warpper {
+    width: 90%;
+    flex-wrap: wrap;
+  }
+}
+.search-warpper .search-input {
+  width: 100%;
+  margin: 0 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+  font-size: 1.1rem;
+}
+.search-warpper .search-input::placeholder {
+  color: #999;
+}
+.search-warpper .search-btn {
+  background-color: #10c2c7;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #fff;
+  padding: 0.3rem 1.2rem;
+  border-radius: 50px;
+  border: 1px solid #262626;
+  box-shadow: 0px 1px 5px 0px black;
+}
+@media (max-width: 768px) {
+  .search-warpper .search-btn {
+    margin-top: 1.5rem;
+  }
+}
+.search-warpper .search-btn:hover {
+  background-color: #12b5bb;
+  cursor: pointer;
+}
+
+.corses-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.corses-container .course-item {
+  width: 400px;
+  margin: 1rem;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 0.5rem;
+  transition: all 1s;
+}
+.corses-container .course-item:hover {
+  scale: 1.1;
+}
+.corses-container .course-info {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.corses-container .course-info .course-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #262626;
+}
+.corses-container .course-info .course-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #04770c;
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 4rem;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .content-container {
+    margin: 0 2rem;
+    margin-top: 4rem;
+  }
+}
+.content-container .logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+}
+.content-container .logo-section_img {
+  width: 200px;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  .content-container .logo-section_img {
+    width: 140px;
+  }
+}
+.content-container .logo-section .logo-title {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #262626;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .content-container .logo-section {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+.content-container .info-section .info-item {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 1.5rem 3rem;
+  border-radius: 5px;
+  background-color: #10c2c7;
+  text-align: center;
+  transition: all 0.5s;
+}
+@media (max-width: 768px) {
+  .content-container .info-section .info-item {
+    padding: 2.2rem 3rem;
+  }
+}
+.content-container .info-section .info-item:hover {
+  background-color: #12b5bb;
+}
+.content-container .info-section .info-item:hover i {
+  transform: rotate(25deg);
+}
+.content-container .info-section .info-item i {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  transition: all 0.5s;
+}
+.content-container .info-section .info-item .info-text {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #262626;
+}
+@media (max-width: 768px) {
+  .content-container .info-section {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3rem;
+  background-color: #10c2c7;
+  padding: 2rem 4rem;
+  color: #fff;
+}
+.footer-container .list-section .list-link {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.5s;
+}
+.footer-container .list-section .list-link:hover {
+  margin-right: 0.9rem;
+}
+.footer-container .text-section p {
+  margin-bottom: 0.6rem;
+}
+
+/*# sourceMappingURL=style.css.map */
